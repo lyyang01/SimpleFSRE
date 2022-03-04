@@ -9,7 +9,9 @@ We release our trained models using BERT and CP as backend models respectively a
 
 ```
 --BERT
-    
-    --no
+    --nodropPrototype-nodropRelation-lr-1e-5
 --CP
+    --nodropPrototype-nodropRelation-lr-9e-6
+    --nodropPrototype-nodropRelation-lr-5e-6
 ```
+You can reproduce our result in the paper with models in **BERT/nodropPrototype-nodropRelation-lr-1e-5** and **CP/nodropPrototype-nodropRelation-lr-5e-6**. We also provide the trained model with a different learning rate for CP in **CP/--nodropPrototype-nodropRelation-lr-9e-6** for extra reference.
