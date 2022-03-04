@@ -2,6 +2,11 @@
 The code of the short paper *"A Simple yet Effective Relation Information Guided Approach for Few-Shot Relation Extraction"*. This paper has been accepted to Findings of ACL2022.
 You can find the main results (**username is liuyang00**) in the paper on FewRel 1.0 competition on CodaLab competition websit: [FewRel 1.0 Competition](https://competitions.codalab.org/competitions/27980#results)
 
+### Requirements
+- ``python 3.8``
+- ``PyTorch 1.7.1``
+- ``transformers 4.6.0``
+
 ### Datasets and Models
 You can find the training and validation data here: [FewRel 1.0 data](https://github.com/thunlp/FewRel/tree/master/data). For the test data, you can easily download from FewRel 1.0 competition website: https://competitions.codalab.org/competitions/27980
 
@@ -16,8 +21,9 @@ We release our trained models using BERT and CP as backend models respectively a
 ```
 You can reproduce our result in the paper with models in *BERT/nodropPrototype-nodropRelation-lr-1e-5* and *CP/nodropPrototype-nodropRelation-lr-5e-6*. We also provide the trained model with a different learning rate for CP in *CP/--nodropPrototype-nodropRelation-lr-9e-6* for extra reference.
 
+
 ### Code
-The code is implemented on python 3.8 and pytorch 1.7.1. Put all data in the **data** folder, CP pretrained model in the **CP_model** folder (you can download CP model from https://github.com/thunlp/RE-Context-or-Names/tree/master/pretrain or [Google Drive](https://drive.google.com/drive/folders/1AwQLqlHJHPuB1aKJ8XPHu8nu237kgtWj?usp=sharing)), and then you can simply use three scripts: *run_train.sh*, *run_eval.sh*, *run_submit.sh* for train, evaluation and test.
+Put all data in the **data** folder, CP pretrained model in the **CP_model** folder (you can download CP model from https://github.com/thunlp/RE-Context-or-Names/tree/master/pretrain or [Google Drive](https://drive.google.com/drive/folders/1AwQLqlHJHPuB1aKJ8XPHu8nu237kgtWj?usp=sharing)), and then you can simply use three scripts: *run_train.sh*, *run_eval.sh*, *run_submit.sh* for train, evaluation and test.
 
 #### Train
 Set the corresponding parameter values in the script, and then run:
@@ -55,6 +61,17 @@ Some explanations of the parameters in the script:
 ```
 
 ### Results
-Results of our approach based on BERT
 
-Results of our approach based on CP
+**BERT on FewRel 1.0**
+
+|                   | 5-way-1-shot | 5-way-5-shot | 10-way-1-shot | 10-way-5-shot |
+|  ---------------  | -----------  | ------------- | ------------ | ------------- |
+| Val               | 91.29 | 94.05 | 86.09 | 89.68 |
+| Test              | 94.42 | 96.37 | 90.73 | 93.47 |
+
+**CP on FewRel 1.0**
+
+|                   | 5-way-1-shot | 5-way-5-shot | 10-way-1-shot | 10-way-5-shot |
+|  ---------------  | -----------  | ------------- | ------------ | ------------- |
+| Val               | 96.21 | 97.07 | 93.38 | 95.11 |
+| Test              | 96.63 | 97.93 | 94.94 | 96.39 |
