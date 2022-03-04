@@ -26,9 +26,9 @@ sh run_train.sh
 ```
 Some explanations of the parameters in the script:
 ```
---pretrain_ckpt: 
+--pretrain_ckpt
 	the path for the BERT-base-uncased
---backend_model:
+--backend_model
 	bert or cp, select one backend model
 ```
 #### Evaluation
@@ -38,10 +38,10 @@ sh run_eval.sh
 ```
 Some explanations of the parameters in the script:
 ```
---pretrain_ckpt: 
-	the path for the BERT-base-uncased
---backend_model:
-	bert or cp, select one backend model
+--test_iter
+	1000, the evaluation iteration
+--load_ckpt
+	the path of the trained model
 ```
 #### Test
 Set the corresponding parameter values in the script, and then run:
@@ -50,10 +50,8 @@ sh run_submit.sh
 ```
 Some explanations of the parameters in the script:
 ```
---pretrain_ckpt: 
-	the path for the BERT-base-uncased
---backend_model:
-	bert or cp, select one backend model
+--test_output
+	the path to save the prediction file
 ```
 
 ### Results
