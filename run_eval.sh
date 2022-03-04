@@ -12,7 +12,6 @@ python train_demo.py \
     --batch_size 4 --only_test \
     --load_ckpt ./checkpoint/$ModelType/camery-ready-CP-$N-$K.pth.tar \
     --pretrain_ckpt /data/liuyang/97beifen/liuyang/bert-base-uncased \
-    --test_output ./submit/$ModelType/pred-$N-$K.json \
     --cat_entity_rep \
     --test_iter 1000 \
     --backend_model bert
