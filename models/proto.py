@@ -39,10 +39,10 @@ class Proto(fewshot_re_kit.framework.FewShotREModel):
         
         
         ##get relation
-        if self.relation_encoder:
-            rel_gol, rel_loc = self.relation_encoder(rel_txt)
-        else:
-            rel_gol, rel_loc = self.sentence_encoder(rel_txt, cat=False)
+        #if self.relation_encoder:
+        #    rel_gol, rel_loc = self.relation_encoder(rel_txt)
+        #else:
+        rel_gol, rel_loc = self.sentence_encoder(rel_txt, cat=False)
         
         #import pdb
         #pdb.set_trace()
